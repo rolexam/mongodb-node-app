@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Add TVSeries</h1>
+        <form action="/series/add" method="post">
+            <div class="form-group">
+                <input class="form-control mb-3" type="text" name="title" placeholder="Title">
+                <input class="form-control mb-3" type="text" name="country" placeholder="Country">
+                <input class="form-control mb-3" type="text" name="genre" placeholder="genre">
+                <input class="form-control mb-3" type="number" name="ageLimits" placeholder="ageLimits">
+                <input class="form-control mb-3" type="datetime-local" name="startDate" placeholder="startDate">
+                <input class="form-control mb-3" type="datetime-local" name="releaseDate" placeholder="releaseDate">
+                <input class="form-control mb-3" type="text" name="ration" placeholder="ration">
+                <input class="form-control mb-3" type="text" name="trailer" placeholder="trailer">
+                <input class="form-control mb-3" type="text" name="cover" placeholder="cover">
+                <input class="form-control mb-3" type="text" name="studio" placeholder="studio">
+                <button class="btn btn-success">Save</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

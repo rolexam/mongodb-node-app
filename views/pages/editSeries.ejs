@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Edit TVSeries <%=_id%></h1>
+        <form action="/series/<%=_id%>/edit" method="post">
+            <div class="form-group">
+                <input class="form-control mb-3" type="text" value="<%=title%>" name="title" placeholder="Title">
+                <input class="form-control mb-3" type="text" value="<%=country%>" name="country" placeholder="Country">
+                <input class="form-control mb-3" type="text" value="<%=genre%>" name="genre" placeholder="genre">
+                <input class="form-control mb-3" type="number" value="<%=ageLimits%>" name="ageLimits" placeholder="ageLimits">
+                <input class="form-control mb-3" type="datetime-local" value="<%=startDate%>" name="startDate" placeholder="startDate">
+                <input class="form-control mb-3" type="datetime-local" value="<%=releaseDate%>" name="releaseDate" placeholder="releaseDate">
+                <input class="form-control mb-3" type="text" value="<%=ration%>" name="ration" placeholder="ration">
+                <input class="form-control mb-3" type="text" value="<%=trailer%>" name="trailer" placeholder="trailer">
+                <input class="form-control mb-3" type="text" value="<%=cover%>" name="cover" placeholder="cover">
+                <input class="form-control mb-3" type="text" value="<%=studio%>" name="studio" placeholder="studio">
+                <button class="btn btn-success">Update</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

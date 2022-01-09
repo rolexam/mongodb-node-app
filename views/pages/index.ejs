@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>TVSeries</h1>
+        <form class="form-inline" action="/" method="get">
+            <div class="form-group mb-2">
+                <input value="<%= searchString %>" class="form-control" type="search" name="query" placeholder="Search...">
+                <button class="btn btn-primary">Search</button>
+            </div>
+        </form>
+
+        <div class="row mb-3 mt-1">
+            <div class="col">
+                <a href="/series/add" class="btn btn-success">Add Series</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <% items.forEach(item => { %>
+            <div class="col-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <%- item.content %>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col">
+                                <form method="post" action="/series/<%=item.id%>/delete">
+                                    <button class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                            <div class="col">
+                                <a href="/series/<%=item.id%>/edit" class="btn btn-warning ml-3">Edit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%    })%>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
